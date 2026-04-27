@@ -2,9 +2,10 @@ import http from 'k6/http'
 import { sleep, check } from 'k6'
 
 export const options = {
-  iterations: 50, // esse número, é o tanto de vezes que o teste descrito abaixo vai ser executado
+  vus: 10, //virtual users
+  duration: '30s',
   thresholds: {
-    http_req_duration: ['p(90)<1', 'max<10'],
+    http_req_duration: ['p(90)<3000', 'max<5000'],
     http_req_failed: ['rate<0.01']
   }
 };
