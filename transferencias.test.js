@@ -29,7 +29,8 @@ export default function() {
 
 
   check(res, { 
-    "status is 201": (res) => res.status === 201 });
+    "status is 201": (res) => res.status === 201 
+  });
     
   sleep(1)
 };
